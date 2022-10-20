@@ -1,0 +1,12 @@
+oc apply -f 
+
+-f (file ro waigos)
+
+tracking
+hostname=tracking.apps.osh.devops.tbc
+path = /
+
+service = webapp
+
+target port = 80 > 80  ( 30080 ze dgamda workeris doneze)
+

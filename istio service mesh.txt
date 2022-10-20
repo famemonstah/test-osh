@@ -1,0 +1,94 @@
+envoy proxy
+
+2 type 
+
+1) iweva ushualod chvens containerebtan ertad sidecaris ambavshvi (guestbook) 
+
+istio ingress gateway-c aseve envoy proxy aris :)
+
+HAproxy-t garet gamovdgavt 
+
+pirveladi traffic romelic HA-dan shemova host-ze , yvelaferi rac aris podebi(gashvebuli) am ingressgatewaym sheileba yvela gaataros( kargi serveria)
+
+
+ramdenime ingress gateway = disaster recoveristvis,  tu 1 mxare data centris mokvda
+
+istiod = control planes schirdeba funqcionirebistvis
+
+pilot citadel galley
+
+istiod = brain
+
+sidecar injection
+
+service to service auth = mTLS encrypt = yvelanairi komunikacia ikripteba mtls-it ( tu ar gvchirdeba rame layer-shi chavxsnit mtls-ss)
+
+strict - noone - on demand ( 3 tipi mtls)
+
+Pilot - tvini, cfg serveri da nebismieri cfgs cvlileba (destination, route cvlileba, memberis damateba) aris pasuxismgebeli
+da syncavs mere yvela sidecartan, yvela objecttan
+
+Galley - scheduleris variantia, cfgs cvlilebis validacia, pilottan miaq ambavi ;dd
+
+Citadel - security, cert signing, mtls sert-ebis generacia
+
+Telemetry - telemetry infos mogroveba(jaeger vizualizacis uketebs infos) da an infos graphis saxit gvadzlevs
+
+Policy - raime policys gavrcelebashi gvexmareba, kanaris police an rame funqcionalis wera chventvis, 
+
+=====================
+
+
+classic load balancer(ha proxy) = gateway-ebi garet gavdgat
+
+
+client > akitxavs ha proxys (winaswar icis ingress gatewaystvis arsebul portze) > istios ingress garet gadgmul domainze shemodis > 
+
+
+podi > garet dgavs serviss (magitoa 2 cali ingress gateway)
+
+
+controlplane da zemodan dataplane dashenebuli
+
+movalt podshi > gavivlit proxys (envoy sidecar injected inside pod) > envoy gadaamisamartebs servistan > tu servisidan rame unda gamovides garet
+an rame sxva servistan envoystan gamoivlis
+
+citadelma sertifikatebi unda daainjectos envoy proxy-shi >  romelime proxymde ro miva daamushavebs, offloads uzams > gaushvebs meore proxyze ukve
+, aqac dacrypta da gaushva garet
+
+Fault injection = custom errorebis gansazgvra
+
+Retries > Service A responses tu ver abrunebs radgan service b sgan ver igebs pasuxs, retry policys vdgamt > miakitxe 5 wamshi ertxel 3jer, tu 15
+wamshi pasuxi mainc uaryofiti iyo mere daabrune service miuwvdomelia errori ...
+
+service a , service b , service c  = 1 tu faildeba shegvidzlia circuit breaker-it amovagdot funqcionalidan da misi gverdis avlit movaxdinot worki
+
+failover = tu service daunshia romelime  > damatebiti gza annn droebit downtime pageze gavushvatt, service a -s transport layerze(destination ruleze)
+gavuketot failover > clients shetavaze vtqvat mobiluri nomrit gadaricxva( shemovliti gza)
+
+health checks = service upshia tu ar aris upshi, rame servisis gamodzaxeba vabshe chaxsnas ...
+
+rate limit = gamodzaxebebis raodenoba da limitis dayeneba  (transport layershi - vtqvat service a dan 10k davayenot limiti da 
+10k +1 ro wamova queshi chadgeba , ((service b-s roca ekontaqteba) ann daidropeba!
+
+TLS termination = obieqtebis chrilshi destination ruleshi, gatewayshi service entryshic raime trafficis offloadis gaketeba .
+
+
+dataplane = worker node (servisebi) 
+
+control plane = functionalis gamoyeneba proxy-shi
+
+subset = appebi
+
+
+destination rules balancingshi
+requesti v1-ze = gaushvi v1-ze
+
+
+Header injector chrome extension  -  tester / testing purposes 
+
+
+
+
+
+

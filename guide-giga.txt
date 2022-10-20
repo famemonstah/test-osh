@@ -1,0 +1,67 @@
+ori variantia , 1 applikacia istioti, 2 applikacia istios gareshe
+
+
+istios gareshe=
+1)vwevt pods
+
+2) vwevt podistvis serviss
+
+3)shegvidzlia wavhalot pod-i da gavushvat deploymenti
+3.1) deploymentshi mashin unda wavshalot sidecar-is injection
+
+4)vwevt routes
+
+=============
+
+istioti
+
+1) vwevt pods
+
+2)vwevt podistvis serviss
+
+3)vshlit pods
+
+4)vushvebt deployments replicebit da sidecars vainjectebt yamlis configuraciashi
+
+5)vwevt gateways istioze
+
+6)vqmnit virtualserviss
+
+7)vqmnit destinationrules
+
+8)vqmnit app-ebis review-is services
+
+===========
+
+
+workload-shi (kiali) - version missing-is warrning  (https://github.com/kiali/kiali/issues/2690)
+
+https://docs.openshift.com/container-platform/4.6/networking/routes/route-configuration.html
+
+
+https://docs.openshift.com/container-platform/4.7/service_mesh/v2x/prepare-to-deploy-applications-ossm.html
+
+https://docs.openshift.com/container-platform/4.6/service_mesh/v2x/ossm-traffic-manage.html
+
+https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/
+
+================
+oc login -u 
+
+oc get pods
+
+oc get services
+
+oc get deployments
+
+oc get gateways
+
+oc get virtualservices
+
+oc get destinationrules
+
+oc get routes (oc project servicemesh)
+
+oc describe pods "podname"
+
+oc project "namespacename" 
