@@ -1,6 +1,19 @@
 ori variantia , 1 applikacia istioti, 2 applikacia istios gareshe
 
 
+vpullavt images dockerhubidan
+docker pull "imagename"
+docker images
+tu aq privilegibi mogvtxova ra pwd-shic vdgavart iq chmod-it uflebebi gaviwerot
+images ro wamovigebt unda gadavtagot 
+docker tag "imagename" "newimagename with nexus url:tag"
+shemdeg nexusze unda davlogindet ( tu ar davlogindebit aq, images apushvisas dockerhubze ushvebs avtomaturad)
+docker login "nexuss url:port:"
+vpushavt images nexusze
+docker push "nexusurl:port/repo/imagename:tag"
+vlogindebit openshiftze
+oc login -u
+
 istios gareshe=
 1)vwevt pods
 
